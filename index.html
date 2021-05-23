@@ -7,7 +7,7 @@
 <meta name="Description" content="Enter your description here"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
+<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
 <title>Title</title>
 </head>
 <body>
@@ -26,14 +26,14 @@
                     </div>
                 </form>
                 <div class="w-100">
-                    <ul class="list-group cityList mx-2 mt-3"></ul>
+                    <ul id="cityList" class="list-group cityList mx-2 mt-3"></ul>
                 </div>
             </div>
             <div class="col-md-9">
-                <div class="card shadow m-2">
-                    <div class="card-body cityToday"></div>
+                <div id="maincard" class="card shadow m-2">
+                    <div id="cardbody" class="card-body cityToday"></div>
                 </div>
-                <div class="m-2">
+                <div id="city5Day" class="m-2">
                     <h3>5-Day Forecast:</h3>
                     <div class="forecast row text-light">
 
@@ -43,7 +43,7 @@
         </div>
     </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
 <script src="assets/script.js"></script>
