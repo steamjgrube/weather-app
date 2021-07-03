@@ -20,18 +20,18 @@ searchButton.click(function () {
         }).then(function (response) {
             var currentCard = $(".currentCard").append("<div>").addClass("card-body");
             currentCard.empty();
-            var currentName = currentCard.append("<p>");
+            var cityName = currentCard.append("<p>");
             // .addClass("card-text");
-            currentCard.append(currentName);
+            currentCard.append(cityName);
 
             var timeUTC = new Date(response.dt * 1000);
-            currentName.append(response.name + " " + timeUTC.toLocaleDateString("en-US"));
-            currentName.append(`<img src="https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png">`);
-            var currentTemp = currentName.append("<p>");
-            currentName.append(currentTemp);
-            currentTemp.append("<p>" + "Temperature: " + response.main.temp + "</p>");
-            currentTemp.append("<p>" + "Humidity: " + response.main.humidity + "%" + "</p>");
-            currentTemp.append("<p>" + "Wind Speed: " + response.wind.speed + "</p>");
+            cityName.append(response.name + " " + timeUTC.toLocaleDateString("en-US"));
+            cityName.append(`<img src="https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png">`);
+            var temperature = cityName.append("<p>");
+            cityName.append(temperature);
+            temperature.append("<p>" + "Temperature: " + response.main.temp + "</p>");
+            temperature.append("<p>" + "Humidity: " + response.main.humidity + "%" + "</p>");
+            temperature.append("<p>" + "Wind Speed: " + response.wind.speed + "</p>");
 
             var urlUV = `https://api.openweathermap.org/data/2.5/uvi?appid=b8ecb570e32c2e5042581abd004b71bb&lat=${response.coord.lat}&lon=${response.coord.lon}`;
 
@@ -40,9 +40,9 @@ searchButton.click(function () {
                 method: "GET"
             }).then(function (response) {
 
-                var currentUV = currentTemp.append("<p>" + "UV Index: " + response.value + "</p>").addClass("card-text");
+                var currentUV = temperature.append("<p>" + "UV Index: " + response.value + "</p>").addClass("card-text");
                 currentUV.addClass("UV");
-                currentTemp.append(currentUV);
+                temperature.append(currentUV);
             });
 
         });
